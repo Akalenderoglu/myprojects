@@ -71,7 +71,7 @@ LATEST_AMI=$(aws ssm get-parameters --names /aws/service/ami-amazon-linux-latest
 ```bash
 touch userdata.sh
 vim userdata.sh
-/#! bin/bash
+#! bin/bash
 yum update -y
 yum install python3
 pip3 install flask
@@ -85,7 +85,7 @@ cd ..
 python3 app.py
 ```
 ```bash
-aws ec2 run-instances --image-id $LATEST_AMI --count 1 --instance-type t2.micro --key-name okt-aws --security-groups roman_numbers_sec_grp --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=roman_numbers}]' --user-data file:///home/ec2-user/userdata.sh
+aws ec2 run-instances --image-id $LATEST_AMI --count 1 --instance-type t2.micro --key-name firstkey --security-groups test_roman_numbers_sec_grp --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=roman_numbers}]' --user-data file:///home/ec2-user/userdata.sh
 or
 
 aws ec2 run-instances \
@@ -93,7 +93,7 @@ aws ec2 run-instances \
     --count 1 \
     --instance-type t2.micro \
     --key-name firstkey \
-    --security-groups roman_numbers_sec_grp \
+    --security-groups test_roman_numbers_sec_grp \
     --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=roman_numbers}]' \
     --user-data file:///home/ec2-user/userdata.sh
 ```
