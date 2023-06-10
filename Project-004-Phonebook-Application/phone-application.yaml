@@ -74,7 +74,7 @@ Resources:
                 pip3 install flask
                 pip3 install flask_mysql
                 echo "${MyDBURI}" > /home/ec2-user/dbserver.endpoint
-                TOKEN="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"
+                TOKEN="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"
                 FOLDER="https://$TOKEN@raw.githubusercontent.com/Akalenderoglu/myprojects/main/Project-004-Phonebook-Application/main/"
                 curl -s --create-dirs -o "/home/ec2-user/templates/index.html" -L "$FOLDER"/templates/index.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/add-update.html" -L "$FOLDER"/templates/add-update.html
